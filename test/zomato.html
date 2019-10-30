@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+    <p id="demo3"></p>
+    <p id="demo2"></p>
+
+    <div class="right">
+        <h5 class="col-s5 offset-s7 btn testcontent">Some test content</h5>
+    </div>
+
+    <script type="text/javascript">
+
+        $.ajax({
+            url: "/api/getDestination",
+            method: "GET"
+        }).then(function (response) {
+
+            var theDest = response
+            //to do 3rd ajax cll to our end pt that will emcompass the next 2 ajax calls
+        })
+        // grabs location from form
+
+
+        var place = "London"
+
+        queryURL = "https://developers.zomato.com/api/v2.1/locations?query=" + place + "&apikey=8b2f1efc94c42842b627309b15cae91b";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            var entityId = response.location_suggestions[0].entity_id;
+
+            queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&sort=rating&apikey=8b2f1efc94c42842b627309b15cae91b";
+
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+
+                //console.log(response.restaurants);
+            });
+        });
+
+
+
+    </script>
+    </div>
+
+
+</body>
+
+</html>

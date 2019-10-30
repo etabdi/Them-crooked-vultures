@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 center">
+                <h1 class="center grey-text">Trip Planner!</h1>
+                <p class="center grey-text ">Have a trip you're dying to go on? But don't know where to start?</p>
+                <p class="center grey-text">We'll give you a hint - start here.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <form class="col s6 offset-s3">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="origin" type="text" class="validate">
+                        <label for="origin">Origin</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="destination" type="text" class="validate">
+                        <label for="destination">Destination</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="begin-trip" type="text" class="datepicker">
+                        <label for="begintrip">Begin Trip</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="end-trip" type="text" class="datepicker">
+                        <label for="begintrip">End Trip</label>
+                    </div>
+                    <!-- <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var elems = document.querySelectorAll(".datepicker");
+                            var instances = M.Datepicker.init(elems, options);
+                            instances(elems, options);
+                        });
+                    </script> -->
+                </div>
+                <label for="group-size">Group Size</label>
+                <div id="test-slider">
+                    <form action="#">
+                        <p class="range-field">
+                            <input type="range" id="group-size" min="0" max="50" />
+                            <span class="thumb">
+                                <span class="value"></span>
+                            </span>
+                        </p>
+                    </form>
+                </div>
+            </form>
+
+        </div>
+        <div class="row">
+            <div class="col s12 center">
+                <!-- <a href="./surveyplan-test.html"> -->
+                <button class="unique btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <!-- </a> -->
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <img id="destination-image" src="https://media.gettyimages.com/photos/eiffel-tower-in-paris-france-picture-id924894324?s=612x612" style="width: 350px; height: 250px;">
+
+    <footer class="page-footer grey">
+        <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1 0 auto;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <div class="col l4 offset-l1 s12">
+                    <h5 class="white-text">Them-Crooked-Vultures</h5>
+                    <p class="grey-text text-lighten-4">We'd love to hear reviews on your trip! Maybe your plan will be
+                        used for another party</p>
+                </div>
+                <div class="col l2 offset-l1 s3">
+                    <h5 class="white-text">Browse</h5>
+                    <ul>
+                        <!-- Take you to the home page -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Trip Planner Home</a></li>
+                        <!-- Take you to the page to display all trips - pagination -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Plans by other users</a></li>
+                        <!-- Take you to a page to display your destinations -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Destinations</a></li>
+                        <!-- Display a page with info to do at all locations -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Credits</a></li>
+                    </ul>
+                </div>
+                <div class="col l2 offset-l1 s3">
+                    <h5 class="white-text">Help</h5>
+                    <ul>
+                        <!-- Answer FAQs people have -->
+                        <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
+                        <!-- Do we put in a privacy Policy -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+                        <!-- Do we put in a Cookie Policy -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Cookie Policy</a></li>
+                        <!-- Do we put in a Copyright Policy -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Copyright Policy</a></li>
+                        <!-- Do we put in Terms of Use? -->
+                        <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Copyright Them-Crooked-Vultures
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        console.log("this is connected & running");
+
+        $(document).on("click", ".btn", function () {
+            // This needs to pull the destination
+            var destination = $("#destination").val().trim();
+            console.log(destination);
+
+            var queryURL = "https://pixabay.com/api/?key=14031716-ee5fc1d1564bb90e3420570a5&q=" +
+                destination + "&image_type=photo&safesearch=true&order=popular&category=places&category=travel&totalHits=1&fullHDURL";
+
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                .then(function (response) {
+                    var results = response.hits[0].largeImageURL;
+                    console.log(results);
+                    var photo = results;
+                    console.log(photo);
+
+                    var destinationImage = $("#destination-image");
+                    destinationImage.attr("src", photo);
+                });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

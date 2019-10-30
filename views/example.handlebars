@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link to the jQuery Library -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- CSS Reset-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+
+    <!-- Materialize -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Google Fonts-->
+    {{!-- <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet"> --}}
+
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="/public/styles/styles.css">
+
+    <title>Trip Planner</title>
+</head>
+
+<div class="nav-wrapper black" style="color:antiquewhite;">
+    <div class="row s12">
+        {{#if user}}
+        <h5>Welcome back {{{user}}} !</h5>
+
+        <div class="navbar">
+            <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
+        </div>
+        <div class="navbar ">
+            <form action="/controllers/profile-controller" method="post">
+                <input type="hidden" type="hidden" name="username" value={{{user}}}>
+
+                <button class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" type="submit"
+                    style=" width:auto;">Profile </button>
+
+            </form>
+        </div>
+        <div class="navbar ">
+            <form action="/controllers/survey-controller" method="post">
+                <input type="hidden" type="hidden" name="username" value={{{user}}}>
+
+                <button class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" type="submit"
+                    style=" width:auto;">Next </button>
+
+            </form>
+        </div>
+        {{else}}
+        <h4>
+            <p>Please <a href='/'>Log In</a></p>
+        </h4>
+        {{/if}}
+
+
+    </div>
+</div>
+
+</div>
+
+<div class="container">
+
+
+
+    <div class="row">
+        <div class="col s12 center">
+            <h1 class="center grey-text">Trip Planner!</h1>
+            <p class="center grey-text ">Have a trip you're dying to go on? But don't know where to start?</p>
+            <p class="center grey-text">We'll give you a hint - start here.</p>
+        </div>
+    </div>
+
+
+    <form action="/controllers/survey-controller" method="post">
+        <div class="row">
+            {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
+            {{!-- <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST"> --}}
+            {{!-- <form class="col s12" action="/controllers/survey-controller" method="POST"> --}}
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input readonly required type="text" name="username" placeholder="Guest " value={{{user}}}>
+                    <label id="first_name" for="first_name">username</label>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input required type="text" name="first_name">
+                    <label id="first_name" for="first_name">First Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input required type="text" name="last_name">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input required type="email" name="email">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input required type="text" name="origin">
+                    <label for="origin">Origin</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input required type="text" name="destination">
+                    <label for="destination">Destination</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input required type="date" name="begintrip">
+                    <label for="begintrip">Begin Trip</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input required type="date" name="endtrip">
+                    <label for="begintrip">End Trip</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <label for="group-size">Group Size</label>
+
+                <div id="test-slider">
+                    <p class="range-field">
+                        <input type="range" id="group-size" min="0" max="50" />
+                        <span class="thumb">
+                            <span class="value"></span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 center">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<br>
+<br>
+
+<footer class="page-footer grey">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col l4 offset-l1 s12">
+                <h5 class="white-text">Them-Crooked-Vultures</h5>
+                <p class="grey-text text-lighten-4">We'd love to hear reviews on your trip! Maybe your plan will be
+                    used for another party</p>
+            </div>
+            <div class="col l2 offset-l1 s3">
+                <h5 class="white-text">Browse</h5>
+                <ul>
+                    <!-- Take you to the home page -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Trip Planner Home</a></li>
+                    <!-- Take you to the page to display all trips - pagination -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Plans by other users</a></li>
+                    <!-- Take you to a page to display your destinations -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Destinations</a></li>
+                    <!-- Display a page with info to do at all locations -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Credits</a></li>
+                </ul>
+            </div>
+            <div class="col l2 offset-l1 s3">
+                <h5 class="white-text">Help</h5>
+                <ul>
+                    <!-- Answer FAQs people have -->
+                    <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
+                    <!-- Do we put in a privacy Policy -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+                    <!-- Do we put in a Cookie Policy -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Cookie Policy</a></li>
+                    <!-- Do we put in a Copyright Policy -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Copyright Policy</a></li>
+                    <!-- Do we put in Terms of Use? -->
+                    <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2019 Copyright Them-Crooked-Vultures
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+    </div>
+</footer>
+
+<style>
+    /* Style the navbar */
+    #navbar {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    /* Navbar links */
+    #navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+
+    /* Page content */
+    .content {
+        padding: 16px;
+    }
+
+    /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky+.content {
+        padding-top: 60px;
+    }
+</style>

@@ -1,0 +1,165 @@
+<nav>
+  <div class="nav-wrapper black">
+    <a href="/" class="brand-logo" style="y:-20"><i class="material-icons">wb_sunny</i>Day-Dreamer</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal2"
+          style="width:auto;">Login</a></li>
+      <li><a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal1"
+          style=" width:auto;">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!--Paralax Banner-->
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+
+    <div class="container">
+      <h1 class="trip-planner">Day-Dreamer</h1>
+      <br><br>
+    </div>
+    <p>Sign in to access your saved trips or you can plan a trip without being able to save it.<p>
+
+        <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="/controllers/main"
+          style=" width:auto;">Plan a trip</a>
+
+  </div>
+
+  <div class="parallax"><img src="/img/boarding-pass-euro-ticket-69866.jpg" alt="boarding pass image"></div>
+  
+</div>
+<br>
+
+
+<div class="row center easyToUse">
+  <h2>Easy to use application!</h2>
+</div>
+<div class="row">
+  <div class="col s4">
+    <div class="center promo promo-example">
+      <i class="large material-icons">border_color</i>
+
+      <p class="promo-caption">Sign up for an account</p>
+      <p class="light center">Having an account allows you to save your information with us!</p>
+    </div>
+  </div>
+  <div class="col s4">
+    <div class="center promo promo-example">
+      <i class="large material-icons">search</i>
+      <p class="promo-caption">Seach for things to do!</p>
+      <p class="light center">Look for restaurants and activities to go to in your specified location!</p>
+    </div>
+  </div>
+  <div class="col s4">
+    <div class="center promo promo-example">
+      <i class="large material-icons">assignment</i>
+      <p class="promo-caption">Manage it</p>
+      <p class="light center">Everything is in one place</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal for Sign Up -->
+<div id="modal1" class="modal">
+
+  <div class="modal-content">
+    <div>
+      <a class="modal-close"><i class="material-icons">close</i></a>
+    </div>
+    <h4 class="center">Account Sign Up</h4>
+    <p class="center">Sign up with us to start planning your trips!</p>
+
+    <div class="row">
+      <form class="col s12" action="/controllers/register-controller" method="POST">
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" placeholder="First Name" name="first_name" required>
+            {{!-- <input id="first_name" type="text" class="validate"> --}}
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" placeholder="Last Name" name="last_name" required>
+            {{!-- <input id="last_name" type="text" class="validate"> --}}
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            {{!-- <input id="username" type="text" class="validate"> --}}
+            <input type="text" placeholder="Enter User Name" name="username" required>
+            <label for="username">Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="password" placeholder="Enter Password" name="password" required>
+            {{!-- <input id="password" type="password" class="validate"> --}}
+            <label for="password" name="password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            {{!-- <input id="password" type="password" class="validate"> --}}
+            <label for="password" name="password-repeat">Repeat Password</label>
+            <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            {{!-- <input id="email" type="email" class="validate"> --}}
+            <input type="text" placeholder="Enter Email adress" name="email" required>
+            <label for="email" name="email">Email</label>
+          </div>
+        </div>
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="col s6">
+      <a href="#!" class="modal-close waves-effect waves-green btn red darken-4 left">Cancel</a>
+    </div>
+    <div class="col s6">
+      <button href="#!" class="waves-effect waves-green btn green accent-4 signupbtn" type="submit">Sign Up</button>
+
+    </div>
+  </div>
+</div>
+</form>
+<!-- Modal for Login-->
+<div id="modal2" class="modal">
+
+  <div class="modal-content">
+    <h4>Login</h4>
+    <p>Enter your account information</p>
+    <form action="/controllers/authenticate-controller" method="post">
+
+      <div class="row">
+        <div class="input-field col s12">
+          {{!-- <input id="username" type="text" class="validate"> --}}
+          <input type="text" name="username_r" placeholder="username" required>
+          <label for="username" name="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="password" name="password_r" placeholder="Password" required>
+          {{!-- <input id="password" type="password" class="validate"> --}}
+          <label for="password" name="password_r">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <a href="#!" class="modal-close waves-effect waves-green btn red darken-4 left">Cancel</a>
+        </div>
+        <div class="col s6">
+          {{!-- <botton  id="/login"  type="submit" class="waves-effect waves-green btn green accent-4 signupbtn">Login</botton>  --}}
+          <button id="/login" class="waves-effect waves-green btn green accent-4 signupbtn" type="submit">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

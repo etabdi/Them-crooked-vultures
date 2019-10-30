@@ -1,0 +1,75 @@
+{
+  "name": "them-crooked-vultures",
+  "version": "1.0.0",
+  "description": "## Application Heroku Link The link to [Name of our App](https://them-crooked-vultures.herokuapp.com/)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "test": "npm run lint && cross-env NODE_ENV=test jest --runInBand"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "alert-node": "^2.0.1",
+    "cryptr": "^4.0.2",
+    "custom-env": "^1.0.2",
+    "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.4.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.4",
+    "react-scripts": "^3.1.2",
+    "sequelize": "^5.19.1",
+    "sequelize-cli": "^5.5.1",
+    "typescript": "^3.6.4",
+    "zomato": "^1.1.0",
+    "zomato-api": "^0.1.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "cross-env": "^5.2.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.16.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2"
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint --quiet .",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/setup.js"
+    ]
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenc26/Them-Crooked-Vultures.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/nguyenc26/Them-Crooked-Vultures/issues"
+  },
+  "homepage": "https://github.com/nguyenc26/Them-Crooked-Vultures#readme"
+}

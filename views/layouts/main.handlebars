@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Link to the jQuery Library -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> --}}
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+
+  <!-- Materialize -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+
+  <!--Style Sheet-->
+  <link rel="stylesheet" href="/styles/styles.css">
+
+  <script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
+  
+
+  <title>Day-Dreamer</title>
+</head>
+
+
+<body>
+  {{{body}}}
+
+  <footer class="page-footer black">
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+    </style>
+
+    <div class="container">
+      <div class="row">
+        <div class="col l4 offset-l1 s12">
+          <h5 class="white-text">Them-Crooked-Vultures</h5>
+          <p class="grey-text text-lighten-4">We'd love to hear reviews on your trip! Maybe your plan will be
+            used for another party</p>
+        </div>
+        <div class="col l2 offset-l1 s3">
+          <h5 class="white-text">Browse</h5>
+          <ul>
+            <!-- Take you to the home page -->
+            <li><a class="grey-text text-lighten-3" href="#!">Trip Planner Home</a></li>
+            <!-- Take you to the page to display all trips - pagination -->
+            <li><a class="grey-text text-lighten-3" href="#!">Plans by other users</a></li>
+            <!-- Take you to a page to display your destinations -->
+            <li><a class="grey-text text-lighten-3" href="#!">Destinations</a></li>
+            <!-- Display a page with info to do at all locations -->
+            <li><a class="grey-text text-lighten-3" href="#!">Credits</a></li>
+          </ul>
+        </div>
+        <div class="col l2 offset-l1 s3">
+          <h5 class="white-text">Help</h5>
+          <ul>
+            <!-- Answer FAQs people have -->
+            <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
+            <!-- Do we put in a privacy Policy -->
+            <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+            <!-- Do we put in a Cookie Policy -->
+            <li><a class="grey-text text-lighten-3" href="#!">Cookie Policy</a></li>
+            <!-- Do we put in a Copyright Policy -->
+            <li><a class="grey-text text-lighten-3" href="#!">Copyright Policy</a></li>
+            <!-- Do we put in Terms of Use? -->
+            <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <script>
+        $(document).ready(function () {
+          $('.modal').modal();
+          $(".parallax").parallax();
+        });
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{{!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-amber.css"> --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Latest compiled and minified CSS -->
+{{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --}}
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+  <div class="nav-wrapper black" style="color:antiquewhite;" >
+                {{#if user}}
+                 
+                     <h2><p>Welcome back <a href='/'>{{{user}}} !</a></p></h2>
+
+                    <br/>
+                        <div class="row " style="position:fixed;right:20px;top:10px;">
+                        <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
+
+            </div>
+
+                 <div class="row " style="position:fixed;right:150px;top:10px;">
+                    <form  action="/controllers/profile-controller" method="post">
+                        <input type="hidden"  type="hidden"   name="username"  value=  {{{user}}} >
+                                                
+                        <button class="btn btn-info btn-lg"  class="glyphicon glyphicon-log-ou" type="submit" style=" width:auto;"  >Profile </button>
+                     </form>
+              </div>
+       </div>  
+                    {{else}}
+                                 <h2><p>Please <a href='/'>Log In</a></p></h2>
+                    {{/if}}
+        </div>            
+       
+
+
+<div class="w3-row-padding w3-theme">
+
+            <div class="col s12 center">
+                <h2>Trip Planner!</h2>
+                <p class="center ">Now that we know where you are going - build out the details here!</p>
+            </div>
+        
+<div class="w3-third w3-section">
+<div class="w3-card-4">
+                <div class="card col s3 left">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id="destination-image"
+                        src="https://media.gettyimages.com/photos/eiffel-tower-in-paris-france-picture-id924894324?s=612x612">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Book hotel and Flights <i
+                            class="material-icons right">more_vert</i></span>
+                   
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><i></i><i
+                            class="material-icons right">close</i></span>
+
+                    <!-- Have these fields editable / updateable -->
+                    <form action="">
+
+  <!-- Booking Details Section -->
+  <section class="form-group">
+    <h2 class="heading">Booking Details</h2>
+      <script charset="utf-8" src="//www.travelpayouts.com/widgets/1b5b18e7f9f00d7202b6187049faebcc.js?v=1832"></script>
+
+  
+
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="w3-third w3-section">
+<div class="w3-card-4">
+                <div class="card col s3 left">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id="destination-image"
+                        src="https://static.more.com/wp-content/uploads/2017/05/01190901/photo-1517479149777-5f3b1511d5ad.jpeg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Search for Events <i
+                            class="material-icons right">more_vert</i></span>
+                    {{!-- <p><i>trip name goes here</i></p> --}}
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><i>Search flight</i><i
+                            class="material-icons right">close</i></span>
+
+                        
+                        
+                        
+                </div>
+            </div>
+        </div>
+    
+
+</div>
+
+<div class="w3-third w3-section">
+<div  id="overflowTest" class="w3-card-4">
+                <div class="card col s3 left">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id="destination-image"
+                        src="https://notablelife.com/media/2015/07/resto.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Find Restaurants <i
+                            class="material-icons right">more_vert</i></span>
+
+                                <input id="destination"    type="hidden"   destination="username"  value=  {{{destination}}} >
+                              
+                  
+                </div>
+                <div class="card-reveal">
+                     <div class = "message col-md-12"></div> 
+                    <span class="card-title grey-text "><i>Close</i>
+                                                        
+                                  </span>
+<div  id="overflowTest" class="jumbotron jumbotron-billboard text-center">
+	
+	<div class="container pt">
+		
+		<div class="mt-5 text-color">
+			<h4>Find the best Restaurants</h4>
+		</div>
+        	<div class="col-xs-6 pl-0 pr-0">
+				<input id="getText" type="text" class="form-control" placeholder="Enter Restaurant Type">
+				</div>
+				<button id = "getMessage" class = "btn btn-success col-xs-2">Search</button>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<hr>
+	
+          
+        </div>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>
+<script>
+    $(document).ready(function() {
+
+ $("#getMessage").on("click", function() {
+
+ 
+  var valueSearchBox = $('#getText').val()
+  if (valueSearchBox === "") {
+   return;
+  }
+  select();
+ });
+
+(function($){
+	function floatLabel(inputType){
+		$(inputType).each(function(){
+			var $this = $(this);
+			// on focus add cladd active to label
+			$this.focus(function(){
+				$this.next().addClass("active");
+			});
+			//on blur check field and remove class if needed
+			$this.blur(function(){
+				if($this.val() === '' || $this.val() === 'blank'){
+					$this.next().removeClass();
+				}
+			});
+		});
+	}
+	// just add a class of "floatLabel to the input field!"
+	floatLabel(".floatLabel");
+})
+
+
+ function select() {
+  var address = $('#destination').val();
+  var valueSearchBox = $('#getText').val()
+  var searchCity = "&q=" + valueSearchBox;
+  var settings = {
+   "async": true,
+   "crossDomain": true,
+   "url": "https://developers.zomato.com/api/v2.1/search?entity_id=" + address + "&entity_type=city" + searchCity + "&count=20",
+   "method": "GET",
+   "headers": {
+    "user-key": "967e2e08ce22588b1668ae3b432bf765",
+    'Content-Type': 'application/x-www-form-urlencoded'
+   }
+  }
+
+  $.getJSON(settings, function(data) {
+
+   data = data.restaurants;
+   var html = "";
+
+   $.each(data, function(index, value) {
+
+    var x = data[index];
+    $.each(x, function(index, value) {
+     var location = x.restaurant.location;
+     var userRating = x.restaurant.user_rating;
+     html += "<div class='data img-rounded'>";
+     html += "<div class='rating'>";
+     html += "<span title='" + userRating.rating_text + "'><p style='color:white;background-color:#" + userRating.rating_color + ";border-radius:4px;border:none;padding:2px 10px 2px 10px;text-align: center;text-decoration:none;display:inline-block;font-size:16px;float:right;'><strong>" + userRating.aggregate_rating + "</strong></p></span><br>";
+     html += "</div>";
+     html += "<img class='resimg img-rounded' src=" + value.thumb + " alt='Restaurant Image' height='185' width='185'>";
+     html += "<a href=" + value.url + " target='_blank' class='action_link'><h2 style='color:red;'><strong>" + value.name + "</strong></h2></a>";
+     html += "  <strong class='text-primary'>" + location.locality + "</strong><br>";
+     html += "  <h6 style='color:grey;'><strong>" + location.address + "</strong></h6><hr>";
+  
+
+     html += "</div>  ..................................................................................................<br>";
+   
+    });
+   });
+   $(".message").html(html);
+  });
+
+ }
+
+});
+</script>
+
+<style>
+    
+</style>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="input-field col s6">
+            <input value="Paris" id="event_name2" type="text" class="validate">
+            <label class="active" for="event_name2">Search Events by Location</label>
+            <a class="waves-effect waves-light btn">button</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card">
+            <div class="col s8">
+                <div class="card-image">
+                    <img id="event-image">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p style="font-size: 10pt;" id="event_name"></p>
+                        <p style="font-size: 10pt;" id="venue_name"></p>
+                        <p style="font-size: 10pt;" id="venue_address"></p>
+                        <p style="font-size: 10pt;" id="location_name"></p>
+                        <p style="font-size: 10pt;" id="start_time"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $(document).on("click", ".btn", function () {
+                var parser, xmlDoc;
+                var singer = $("#event_name2").val().trim();
+                console.log(singer);
+
+                var queryURL = "https://pixabay.com/api/?key=14031716-ee5fc1d1564bb90e3420570a5&q=" +
+                    singer + "&image_type=photo&safesearch=true&order=popular&category=places&totalHits=1&fullHDURL";
+                var queryURL2 = "https://community-eventful.p.rapidapi.com/events/search?keywords=" + singer + "&app_key=q2Qg27LVgj8fNJsB";
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": queryURL2,
+                    // "url": "https://community-eventful.p.rapidapi.com/events/search?keywords=shawn%20mendes&app_key=q2Qg27LVgj8fNJsB",
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-host": "community-eventful.p.rapidapi.com",
+                        "x-rapidapi-key": "69ce8a3b37msh84834038fac1addp1d1a99jsn88d57080377b"
+                    }
+                }
+
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).then(function (resp1) {
+                    $.ajax(settings)
+                        .then(function (resp2) {
+                            var results = resp1;
+                            console.log(resp1);
+                            var photo = results.hits[0].largeImageURL;
+
+                            var destinationImage = $("#event-image");
+                            destinationImage.attr("src", photo);
+                            destinationImage.attr("style", "height: 250px; width:250px;")
+
+                            console.log(resp2);
+                            console.log(resp2.childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue);
+                            // console.log(resp2.getElementsByTagName("stop_time")[0].childNodes[0].nodeValue);
+
+                            document.getElementById("event_name").innerHTML =
+                                resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+
+                            document.getElementById("venue_name").innerHTML =
+                                resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue;
+
+                            document.getElementById("venue_address").innerHTML =
+                                resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue;
+
+                            document.getElementById("location_name").innerHTML =
+                                resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue + ", " + resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue;
+
+                            document.getElementById("start_time").innerHTML =
+                                resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue;
+                        });
+                });
+            });
+        })
+
+    </script>
+</body>
+
+</html>
