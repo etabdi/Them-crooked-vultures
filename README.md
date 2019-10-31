@@ -4,11 +4,18 @@
     
    ![Alt Text](https://github.com/etabdi/Them-crooked-vultures/blob/master/public/img/main.PNG)
    
-### Profile page
+### Survey page
 
   ![Alt Text](https://github.com/etabdi/Them-crooked-vultures/blob/master/public/img/survey.PNG)
    
-     - Display user’s trip information
+     Display user’s trip information
+     
+### profile page
+
+  ![Alt Text](https://github.com/etabdi/Them-crooked-vultures/blob/master/public/img/profilew.PNG)
+   
+     Display user’s trip information   
+     
  ### Planning page 
  
      Search flights,Hotel, restaurants, and events 
