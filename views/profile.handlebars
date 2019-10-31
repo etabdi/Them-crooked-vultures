@@ -1,13 +1,4 @@
-<body>
-      <div id="username"style="position:fixed;right:20%;color:green;" >
-          {{#if user}}
-               <h5>Welcome back  {{{user}}} !</h5>
-            {{else}}
-                <p>Please <a href='/'>Log In</a></p>
-            {{/if}}
-            
-                
-      
+
       </div>
 <body>
     <!--Section: navbar w/mobility-->
@@ -68,21 +59,14 @@
                             <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal1"
           style=" width:auto;">Add plans</a>
 
-
                                    <br/>
+                                   <br/>
+                                                  <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal2"
+          style=" width:auto;">Upcoming plan</a>
 
 
                             <hr>
-                                  <form  action="/controllers/profile_r-controller" method="post">
-                     {{!-- <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal2"   style=" width:auto;"> --}}
-                         
-                   
-                        <input type="hidden"  type="hidden"   name="name"  {{#each username}} value=  {{this.first_name}} {{/each}} ></input>
-                          <button class="btn waves-effect waves-light" type="submit" name="action">Upcoming plan  </button>
-                          
-                         </form>
-                          
-                          </a>
+                     
         
                     </div>
                 </div>
@@ -98,10 +82,12 @@
  
             {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
          {{!-- <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST"> --}}
-        <form class="col s12" action="/controllers/profile_s-controller" method="POST"> 
+        <form class="col s12" action="/controllers/profile-controller" method="POST" style="padding:20px;"> 
                 
                 <div class="row">                                                                 
-                     
+                     <h4>upcoming plan details</h4>
+                     <hr>
+                     <br/>
                     <div class="input-field col s6">
                           <input readonly  type="text" name="username" placeholder="Guest " {{#each username}} value=  {{this.first_name}} {{/each}}>
                       
@@ -178,7 +164,7 @@
 </div>
 
     </div>
-<div id="modal2" class="modal2">
+<div id="modal2" class="modal">
          <div class="modal-content">    
    <!--Section for Current trip-->
     <div class="container">
