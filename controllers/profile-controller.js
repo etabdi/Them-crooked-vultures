@@ -31,7 +31,11 @@ module.exports.profile = function(req, res) {
       con.query(sqls, [name, first_name], function(err, result2) {
         if (err) throw err;
         console.log(name);
-        res.render("profile", { user: result1, username: result2 });
+        res.render("profile", {
+          user: result1,
+          username: result2,
+          name: req.body.username
+        });
       });
     });
   });
