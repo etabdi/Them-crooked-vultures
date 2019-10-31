@@ -28,6 +28,7 @@
       NODE JS   
       Express.js
       Express-session
+      express handlebars
       cryptr 
       MySQL 
       heroku
