@@ -1,9 +1,12 @@
 # Them-Crooked-Vultures
 
 # Landing page
+    
+   ![Alt Text](https://github.com/etabdi/Them-crooked-vultures/blob/master/public/img/main.PNG)
     - Login & sign up functionality 
     - Outline how to use our site
 # Profile page
+    ![Alt Text](https://github.com/etabdi/Them-crooked-vultures/blob/master/public/img/main.PNG)
      - Display user’s trip information
      - Planning page 
 # Search flights, restaurants, and events 
@@ -12,7 +15,7 @@
 
 
 
-   ![Alt Text](https://github.com/etabdi/Eat-Da-Burger/blob/)
+   ![Alt Text](https://github.com/etabdi/Them-crooked-vultures/blob/master/public/img/main.PNG)
       
 
 
