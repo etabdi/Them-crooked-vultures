@@ -6,7 +6,7 @@
    
 ### Profile page
 
-  ![Alt Text](https://coding-bootcamp-fsf-prework.readthedocs-hosted.com/en/latest/modules/chapter4/)
+![Alt Text](https://coding-bootcamp-fsf-prework.readthedocs-hosted.com/en/latest/modules/chapter4/)
    
      - Display user’s trip information
  ### Planning page 
