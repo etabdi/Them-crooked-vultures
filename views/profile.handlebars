@@ -1,6 +1,34 @@
-<script src="jquery-3.4.1.min.js"></script>
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Link to the jQuery Library -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- CSS Reset-->
+    <link rel="stylesheet" href="css/reset.css">
+    {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> --}}
+    <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+
+    <!-- Materialize -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Google Fonts-->
+    {{!-- <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet"> --}}
+
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="/public/styles/styles.css">
+
+    <title>Trip Planner</title>
+</head>
 
 <body>
 <nav>
@@ -24,7 +52,7 @@
             <div class="col s12 m12">
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="http://localhost:3000/img/boarding-pass-euro-ticket-69866.jpg">
+                        {{!-- <img src="http://localhost:3000/img/boarding-pass-euro-ticket-69866.jpg"> --}}
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
@@ -70,7 +98,8 @@
                             <hr>
                      
         
-            
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -83,7 +112,7 @@
  
             {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
          {{!-- <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST"> --}}
-        <form class="col s12" action="/controllers/profile-controller" method="POST" style="padding:20px;"> 
+        <form class="col s12" action="/controllers/profile_r-controller" method="POST" style="padding:20px;"> 
                 
                 <div class="row">                                                                 
                      <h4>upcoming plan details</h4>
@@ -97,8 +126,8 @@
                 </div>
                         <div class="row">
                     <div class="input-field col s12">
-                          <input  type="text" name="first_name" >
-                        <label id="flight"  for="first_name">Name</label>
+                          <input  type="date" name="date" >
+                        <label id="flight"  for="date">Date</label>
                     </div>
                 </div>
                 
@@ -149,7 +178,7 @@
     </div>
     <div class="col s6">
       <button href="#!" class="waves-effect waves-green btn green accent-4 signupbtn" type="submit">submit</button>
-   </form>
+
     </div>
   </div>
 </div>
@@ -173,6 +202,7 @@
          <div class="modal-content">    
    <!--Section for Current trip-->
     <div class="container">
+        <div class="row">
             <h4>upcoming plan details</h4>
             <div class="col s12 m12">
                         
@@ -182,7 +212,7 @@
                             <thead>
                             <tr>
 
-                                 <th>ID</th>
+                                 {{!-- <th>ID</th> --}}
                                 <th>Name</th>
                                  <th>Flight</th>
                                 <th>Hotel</th>
@@ -190,30 +220,39 @@
                                  <th>Remarks</th>
                             </tr>
                             </thead>
-                             
+                              {{#each user}}
                             <tbody>
                             <tr>
-                               {{#each user}}
-                               <tr>                                <td>{{this.id}}</td>
+                                {{!-- <td>{{this.id}}</td> --}}
                                 <td>{{this.username}}</td>
                                  <td>{{this.flight}}</td>
                                 <td>{{this.hotel}}</td>
                                 <td>{{this.activity}}</td>
                                  <td>{{this.comment1}}</td>
                           <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
-                            </tr>
+                           {{!-- <td> <input type="button" id ="delquote" value="Delete" onclick = "deleteRow(this)"  </td> --}}
+                            
                               {{/each}}
                             </tr>
                             </tbody>
                         </table>
                           </div>
                           </div>
-               </div>
+                                  </div>
       </div>
     </form>
   </div>
 </div>
 
+                             </div>
+                         </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
@@ -235,7 +274,7 @@
       var id = $(this).data("id");
   
       // Send the DELETE request.
-      $.ajax("/api/profile/" + id, {
+      $.ajax("/api/quotes/" + id, {
         type: "DELETE"
       }).then(
         function() {

@@ -29,7 +29,7 @@ module.exports.profile = function(req, res) {
   ) {
     con.query(sqlp, [name, date], function(err, result1) {
       con.query(sqls, [name, first_name], function(err, result2) {
-        if (err) throw err;
+        if (err) alert("please fill ");
         console.log(name);
         res.render("profile", {
           user: result1,
