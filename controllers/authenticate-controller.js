@@ -40,9 +40,8 @@ module.exports.authenticate = function(req, res) {
 
           //    message: "User Name does not exits"
           //  });
-          // res.render("auth");
+          res.render("auth");
           alert("User name does not exits!");
-          res.render("profile", { user: req.body.username_r });
         }
       }
     }
