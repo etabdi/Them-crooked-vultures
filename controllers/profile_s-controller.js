@@ -33,8 +33,8 @@ module.exports.profile = function(req, res) {
       //   data: results,
       //   message: "user registered sucessfully"
       // });
-      // res.redirect("/surveyplan");
-      res.render("profile", { user: req.body.username });
+      res.redirect("/surveyplan");
+      //res.render("profile", { user: req.body.username });
     }
   });
 };
