@@ -86,9 +86,9 @@ module.exports = function(app) {
   app.post("/controllers/profile-controller", profileController.profile);
   app.post("/controllers/survey-controller", surveycontroller.survey);
   app.post("/controllers/profile_s-controller", profile_sController.profile);
-  // app.post("/controllers/profile_r-controller",profile_rController.profile);
+  
 
-  app.delete("/api/quotes/:id", function(req, res) {
+  app.delete("/api/examples/:id", function(req, res) {
     con.query("DELETE FROM survey WHERE id = ?", [req.params.id], function(
       err,
       result

@@ -88,11 +88,11 @@
                             </div>
                         </div>
                         
-                            <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal1" style=" width:auto;">Add plans</a>
+                            {{!-- <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal1" style=" width:auto;">Add plans</a> --}}
 
                                    <br/>
                                    <br/>
-                   <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal2"  style=" width:auto;">Upcoming plan</a>
+                   {{!-- <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal2"  style=" width:auto;">Upcoming plan</a> --}}
 
 
                             <hr>
@@ -270,10 +270,11 @@
 <script>
       
     $(".delquote").on("click", function(event) {
+      console.log('delete')
       var id = $(this).data("id");
   
       // Send the DELETE request.
-      $.ajax("/api/quotes/" + id, {
+      $.ajax("/api/examples/" + id, {
         type: "DELETE"
       }).then(
         function() {
